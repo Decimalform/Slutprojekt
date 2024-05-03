@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class DialougeScript : MonoBehaviour
 {
+    public SoundScript soundScript;
+
     public List<GameObject> interactableObjects; //List of all objects that you can interact with/that triggers the dialogueBox
 
     //Visable textbox componets
@@ -36,21 +38,22 @@ public class DialougeScript : MonoBehaviour
     void Start()
     {
         print("dialogue script start");
+        //SoundScript.soundEffects.clip = SoundScript.sound1; //Sets the initial sound to sound1
         textSpeed = 0.1f; //Sets the intial waiting time between the typing of each character to 0.1 seconds
-        //textComponent.text = string.Empty; //Makes sure that the dialogueBox starts empty
+        textComponent.text = string.Empty; //Makes sure that the dialogueBox starts empty
         StartDialouge(); //Plays the StartDialogue method, starting the dialouge when the game starts
 
         //Set variables that represent other components
         nameOfSpeaker = NameBox.GetComponent<TextMeshProUGUI>(); //Sets nameOfSpeaker to the nameBox
 
-        ImageScript = GameObject.Find("Portrait").gameObject.GetComponent<ImageScript>(); //Sets GameObject ImageScript to Script ImageScript
+        ImageScript = /*GameObject.Find("Portrait").gameObject*/soundScript.GetComponent<ImageScript>(); //Sets GameObject ImageScript to Script ImageScript
 
         SoundScript = GameObject.Find("Canvas").gameObject.GetComponent<SoundScript>(); //Sets GameObject SoundScript to script SoundScript
 
         //Sets numberOfPerson
         numberOfPerson = 1; //Sets a startvalue for numberOfPerson
 
-        Portrait = ImageScript.gameObject.GetComponent<Image>(); //Sets the portrait object to the Image component on this GameObject
+        Portrait = ImageScript.gameObject.GetComponent<Image>(); //Sets the portrait object to the Image component under this GameObject
 
 
         ChangeToPerson1(); //Sets the number of the initial person speaking to person1

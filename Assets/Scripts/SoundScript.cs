@@ -22,7 +22,7 @@ public class SoundScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        print("Hiiii");
     }
 
     // Update is called once per frame
