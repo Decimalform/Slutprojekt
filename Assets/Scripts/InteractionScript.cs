@@ -5,29 +5,29 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NewBehaviourScript : MonoBehaviour
+public class InteractionScript : MonoBehaviour
 {
-    public GameObject canvas; //Represents the canvas
+    public GameObject Canvas; //Represents the SoundScript
     public GameObject DialougeBox; //Represents the DialogueBox
-    public DialougeScript dialougeScript; //Represents the DialogueScript
+    public DialougeScript DialougeScript; //Represents the DialogueScript
 
-    public void accsesDialogueBox()
+    public void AccsesDialogueBox()
     {
-        canvas = GameObject.Find("Canvas"); //Finds the Canvas object
-        DialougeBox = canvas.transform.Find("DialougeBox").gameObject; //Find the DialogueBox
-        dialougeScript = DialougeBox.GetComponent<DialougeScript>(); //Finds the DialgoueScript
+        Canvas = GameObject.Find("SoundScript"); //Finds the SoundScript object
+        DialougeBox = Canvas.transform.Find("DialougeBox").gameObject; //Find the DialogueBox
+        DialougeScript = DialougeBox.GetComponent<DialougeScript>(); //Finds the DialgoueScript
         DialougeBox.SetActive(true); //Set the DialogueBox to active
-        dialougeScript.lines.Clear(); //Removes all other lines
-        dialougeScript.textComponent.text = string.Empty; //Removes all text from the textBox
+        DialougeScript.lines.Clear(); //Removes all other lines
+        DialougeScript.textComponent.text = string.Empty; //Removes all text from the textBox
     }
 
     //Interactions
-    public void bulettHoles()
+    public void BulettHoles()
     {
-        accsesDialogueBox();
-        dialougeScript.lines.Add("There appears to be bulletholes in the wall");
-        dialougeScript.ChangeToPerson2();
-        dialougeScript.StartDialouge(); //Starts the dialogue
+        AccsesDialogueBox();
+        DialougeScript.lines.Add("There appears to be bulletholes in the wall");
+        DialougeScript.ChangeToPerson2();
+        DialougeScript.StartDialouge(); //Starts the dialogue
     }
 
     // Start is called before the first frame update

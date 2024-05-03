@@ -5,13 +5,12 @@ using UnityEngine.UI;
 
 public class ImageScript : MonoBehaviour
 {
-    public List<Sprite> portraits;
-    public Image portrait;
+    public List<Sprite> portraits; //List of the different portraits that you can switch between
 
     // Start is called before the first frame update
     void Start()
     {
-        portrait = gameObject.GetComponent<Image>();
+        print("imagescript start");
     }
 
     // Update is called once per frame

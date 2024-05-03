@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class SoundScript : MonoBehaviour
 {
-    public AudioSource soundEffects;
-    public AudioClip sfx1, sfx2;
+    public AudioSource soundEffects; //The current sound
+    public AudioClip sound1, sound2; //All the different sounds
 
     public void Sound1()
     {
-        soundEffects.clip = sfx1;
-        soundEffects.Play();
+        soundEffects.clip = sound1; //Change the current sound to sound 1
+        soundEffects.Play(); //Play sound
     }
 
     public void Sound2()
     {
-        soundEffects.clip = sfx2;
-        soundEffects.Play();
+        soundEffects.clip = sound2; //Change th current sound to sound 2
+        soundEffects.Play(); //Play sound
     }
 
     // Start is called before the first frame update

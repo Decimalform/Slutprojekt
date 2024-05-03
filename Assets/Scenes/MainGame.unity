@@ -705,9 +705,9 @@ MonoBehaviour:
   - Welcome to the investigation detective.
   - Your help is much appriciated.
   textSpeed: 0.1
-  nameBox: {fileID: 1839023553}
+  NameBox: {fileID: 0}
   nameOfSpeaker: {fileID: 0}
-  imageScript: {fileID: 0}
+  ImageScript: {fileID: 0}
   Canvas: {fileID: 0}
   numberOfPerson: 0
 --- !u!114 &763574852
@@ -807,7 +807,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1239873283}
-  - component: {fileID: 1239873282}
+  - component: {fileID: 1239873284}
   m_Layer: 5
   m_Name: InteractableObjects
   m_TagString: Untagged
@@ -815,21 +815,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1239873282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1239873281}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5675a9550032104bb0714de2858a740, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
-  DialougeBox: {fileID: 0}
-  dialougeScript: {fileID: 0}
 --- !u!224 &1239873283
 RectTransform:
   m_ObjectHideFlags: 0
@@ -849,6 +834,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1239873284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239873281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5675a9550032104bb0714de2858a740, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Canvas: {fileID: 0}
+  DialougeBox: {fileID: 0}
+  DialougeScript: {fileID: 0}
 --- !u!1 &1368826201
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,7 +940,7 @@ MonoBehaviour:
   portraits:
   - {fileID: 21300000, guid: 1f9164b7655d1e241937cb618688cb5a, type: 3}
   - {fileID: 21300000, guid: 82b6a025fa40b434b9a09823e84eabc8, type: 3}
-  portrait: {fileID: 0}
+  Portrait: {fileID: 0}
 --- !u!1 &1564363266
 GameObject:
   m_ObjectHideFlags: 0
@@ -1766,7 +1766,11 @@ PrefabInstance:
     - target: {fileID: 7293018697783130108, guid: 08bcdc126e0d48946b9b329599dbf7dd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1239873282}
+      objectReference: {fileID: 11500000, guid: e5675a9550032104bb0714de2858a740, type: 3}
+    - target: {fileID: 7293018697783130108, guid: 08bcdc126e0d48946b9b329599dbf7dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8419714453552261605, guid: 08bcdc126e0d48946b9b329599dbf7dd, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

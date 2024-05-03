@@ -12,15 +12,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Intro.unity
     guid: 242d6d589eafca8418c07785f797f9a4
   - enabled: 1
-    path: Assets/Scenes/Investigation1.unity
+    path: Assets/Scenes/Unused/Investigation1.unity
     guid: 5749fd77016982f4c9b049b8450fb7a1
   - enabled: 1
-    path: Assets/Scenes/Suspects.unity
+    path: Assets/Scenes/Unused/Suspects.unity
     guid: 3722f639497be544e9ba42a6e78e1da1
   - enabled: 1
-    path: Assets/Scenes/Surroundings.unity
+    path: Assets/Scenes/Unused/Surroundings.unity
     guid: 7c00657bc71566a4a920f0cffd55962d
   - enabled: 1
-    path: Assets/Scenes/TheVictim.unity
+    path: Assets/Scenes/Unused/TheVictim.unity
     guid: 20f113a7e328e984bb603db2e1d3ef8e
   m_configObjects: {}

@@ -136,7 +136,7 @@ public class TimeLineGeneratorScript : MonoBehaviour
                 Destroy(obj);
             }
             
-            GameObject Canvas = GameObject.FindWithTag("Canvas");
+            GameObject Canvas = GameObject.FindWithTag("SoundScript");
 
             print("pressed button");
 
