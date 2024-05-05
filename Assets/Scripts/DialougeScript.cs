@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class DialougeScript : MonoBehaviour
 {
+    //public AudioSource soundEffects; //The current sound
+    //public AudioClip sound1, sound2; //All the different sounds
     public SoundScript soundScript;
 
     public List<GameObject> interactableObjects; //List of all objects that you can interact with/that triggers the dialogueBox
@@ -33,12 +35,10 @@ public class DialougeScript : MonoBehaviour
 
     public Image Portrait; //Represents the portrait object in the dialogueBox
 
-
+    
     // Start is called before the first frame update
     void Start()
     {
-        print("dialogue script start");
-        //SoundScript.soundEffects.clip = SoundScript.sound1; //Sets the initial sound to sound1
         textSpeed = 0.1f; //Sets the intial waiting time between the typing of each character to 0.1 seconds
         textComponent.text = string.Empty; //Makes sure that the dialogueBox starts empty
         StartDialouge(); //Plays the StartDialogue method, starting the dialouge when the game starts
@@ -46,9 +46,9 @@ public class DialougeScript : MonoBehaviour
         //Set variables that represent other components
         nameOfSpeaker = NameBox.GetComponent<TextMeshProUGUI>(); //Sets nameOfSpeaker to the nameBox
 
-        ImageScript = /*GameObject.Find("Portrait").gameObject*/soundScript.GetComponent<ImageScript>(); //Sets GameObject ImageScript to Script ImageScript
+        ImageScript = GameObject.Find("Portrait").gameObject.GetComponent<ImageScript>(); //Sets GameObject ImageScript to Script ImageScript
 
-        SoundScript = GameObject.Find("Canvas").gameObject.GetComponent<SoundScript>(); //Sets GameObject SoundScript to script SoundScript
+        SoundScript = gameObject.GetComponent<SoundScript>(); //Sets GameObject SoundScript to script SoundScript
 
         //Sets numberOfPerson
         numberOfPerson = 1; //Sets a startvalue for numberOfPerson
@@ -78,6 +78,11 @@ public class DialougeScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             interactableObjects[0].SetActive(true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q)) //If Q id pressed
+        {
+            ChangeToPerson2(); //Play the ChangeToPerson2() method
         }
     }
    
@@ -143,7 +148,7 @@ public class DialougeScript : MonoBehaviour
     {
         if (numberOfPerson == 1) //If the number of the person talking = 1/if you´re talking to person 1
         {
-            SoundScript.Sound1(); //Play the first sound ´from the SoundScript
+            SoundScript.Sound1(); //Play the first sound from the SoundScript
         }
 
         if (numberOfPerson == 2) //If the number of the person talking = 2/if you´re talking to person 2

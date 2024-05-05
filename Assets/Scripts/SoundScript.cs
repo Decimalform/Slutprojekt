@@ -18,16 +18,4 @@ public class SoundScript : MonoBehaviour
         soundEffects.clip = sound2; //Change th current sound to sound 2
         soundEffects.Play(); //Play sound
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        print("Hiiii");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
