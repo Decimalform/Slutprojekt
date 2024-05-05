@@ -7,14 +7,14 @@ using UnityEngine.UI;
 
 public class InteractionScript : MonoBehaviour
 {
-    public GameObject Canvas; //Represents the SoundScript
+    public GameObject SoundScript; //Represents the SoundScript
     public GameObject DialougeBox; //Represents the DialogueBox
     public DialougeScript DialougeScript; //Represents the DialogueScript
 
     public void AccsesDialogueBox()
     {
-        Canvas = GameObject.Find("SoundScript"); //Finds the SoundScript object
-        DialougeBox = Canvas.transform.Find("DialougeBox").gameObject; //Find the DialogueBox
+        SoundScript = GameObject.Find("SoundScript"); //Finds the SoundScript object
+        //DialougeBox = SoundScript.transform.Find("DialougeBox").gameObject; //Find the DialogueBox
         DialougeScript = DialougeBox.GetComponent<DialougeScript>(); //Finds the DialgoueScript
         DialougeBox.SetActive(true); //Set the DialogueBox to active
         DialougeScript.lines.Clear(); //Removes all other lines

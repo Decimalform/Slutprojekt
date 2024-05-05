@@ -441,7 +441,6 @@ GameObject:
   - component: {fileID: 492198647}
   - component: {fileID: 492198646}
   - component: {fileID: 492198645}
-  - component: {fileID: 492198649}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Canvas
@@ -535,21 +534,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &492198649
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 492198644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7db2d77cd5dd41040893f7fb70a3b581, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundEffects: {fileID: 1590368041}
-  sfx1: {fileID: 8300000, guid: 97e24d8a3224d9c4eb708ee3718f8d62, type: 3}
-  sfx2: {fileID: 8300000, guid: 1a64449a3caf53542b4d33c381874a14, type: 3}
 --- !u!1 &564843924
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,6 +637,7 @@ GameObject:
   - component: {fileID: 763574850}
   - component: {fileID: 763574853}
   - component: {fileID: 763574852}
+  - component: {fileID: 763574854}
   - component: {fileID: 763574851}
   m_Layer: 5
   m_Name: DialougeBox
@@ -695,6 +680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 174e26717e315bc448bb0bbe789a344d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundScript: {fileID: 0}
   interactableObjects:
   - {fileID: 76423136}
   textComponent: {fileID: 303397876}
@@ -705,11 +691,12 @@ MonoBehaviour:
   - Welcome to the investigation detective.
   - Your help is much appriciated.
   textSpeed: 0.1
-  NameBox: {fileID: 0}
+  NameBox: {fileID: 1839023553}
   nameOfSpeaker: {fileID: 0}
   ImageScript: {fileID: 0}
-  Canvas: {fileID: 0}
+  SoundScript: {fileID: 0}
   numberOfPerson: 0
+  Portrait: {fileID: 0}
 --- !u!114 &763574852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -748,6 +735,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 763574849}
   m_CullTransparentMesh: 1
+--- !u!114 &763574854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763574849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db2d77cd5dd41040893f7fb70a3b581, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEffects: {fileID: 1590368041}
+  sound1: {fileID: 8300000, guid: 97e24d8a3224d9c4eb708ee3718f8d62, type: 3}
+  sound2: {fileID: 8300000, guid: 1a64449a3caf53542b4d33c381874a14, type: 3}
 --- !u!1 &863483277
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,8 +848,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5675a9550032104bb0714de2858a740, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Canvas: {fileID: 0}
-  DialougeBox: {fileID: 0}
+  SoundScript: {fileID: 0}
+  DialougeBox: {fileID: 763574849}
   DialougeScript: {fileID: 0}
 --- !u!1 &1368826201
 GameObject:
@@ -940,7 +942,6 @@ MonoBehaviour:
   portraits:
   - {fileID: 21300000, guid: 1f9164b7655d1e241937cb618688cb5a, type: 3}
   - {fileID: 21300000, guid: 82b6a025fa40b434b9a09823e84eabc8, type: 3}
-  Portrait: {fileID: 0}
 --- !u!1 &1564363266
 GameObject:
   m_ObjectHideFlags: 0
@@ -1553,7 +1554,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 492198649}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SoundScript, Assembly-CSharp
         m_MethodName: Sound1
         m_Mode: 1
@@ -1766,10 +1767,14 @@ PrefabInstance:
     - target: {fileID: 7293018697783130108, guid: 08bcdc126e0d48946b9b329599dbf7dd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 11500000, guid: e5675a9550032104bb0714de2858a740, type: 3}
+      objectReference: {fileID: 1239873284}
     - target: {fileID: 7293018697783130108, guid: 08bcdc126e0d48946b9b329599dbf7dd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: BulettHoles
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293018697783130108, guid: 08bcdc126e0d48946b9b329599dbf7dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: InteractionScript, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8419714453552261605, guid: 08bcdc126e0d48946b9b329599dbf7dd, type: 3}
       propertyPath: m_Pivot.x
