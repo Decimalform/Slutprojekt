@@ -18,13 +18,13 @@ public class MainMenuScript : MonoBehaviour
 
     public void GoToInvestigation()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(7);
         //Goes to investigation
     }
 
     public void GoToSuspects()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(6);
         //Goes to suspects
     }
 

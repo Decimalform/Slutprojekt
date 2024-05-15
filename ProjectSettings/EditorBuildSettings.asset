@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Unused/TheVictim.unity
     guid: 20f113a7e328e984bb603db2e1d3ef8e
+  - enabled: 1
+    path: Assets/Scenes/Suspects2.unity
+    guid: d9949d1bdcbe0d048ace15bf8f97d8f6
+  - enabled: 1
+    path: Assets/Scenes/MainGame.unity
+    guid: 6036d39a6f2903144957dce624beeb3e
   m_configObjects: {}

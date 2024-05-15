@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Canvas
   - Character
+  - Sofa
+  - CupboardDoor
   layers:
   - Default
   - TransparentFX
