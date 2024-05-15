@@ -5,6 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour
 {
+    public List<string> suspects;
+    public GameObject AccuseButton;
+    public int murderersIndex;
+    public int indexOfLastPersonClicked;
+
+    public GameObject DialougeBox; //Represents the DialogueBox
+    public DialougeScript DialougeScript; //Represents the DialogueScript
+    public GameObject SoundScript; //Represents the SoundScript
+
+    public void AccsesDialogueBox()
+    {
+        SoundScript = GameObject.Find("SoundScript"); //Finds the SoundScript object
+        //DialougeBox = SoundScript.transform.Find("DialougeBox").gameObject; //Find the DialogueBox
+        DialougeScript = DialougeBox.GetComponent<DialougeScript>(); //Finds the DialgoueScript
+        DialougeBox.SetActive(true); //Set the DialogueBox to active
+        DialougeScript.lines.Clear(); //Removes all other lines
+        DialougeScript.textComponent.text = string.Empty; //Removes all text from the textBox
+    }
     public void GoToMainMenu()
     {
         SceneManager.LoadScene(0);
@@ -44,6 +62,118 @@ public class MainMenuScript : MonoBehaviour
     {
         Application.Quit();
         //Quits Game
+    }
+
+    public void Accuseation()
+    {
+        if(indexOfLastPersonClicked == murderersIndex)
+        {
+            print("You winn!");
+        }
+        else
+        {
+            print("You lose!");
+        }
+    }
+
+    //Characters
+    public void MissScarlett()
+    {
+        if (!DialougeBox.activeSelf)
+        {
+            AccsesDialogueBox();
+            indexOfLastPersonClicked = 0;
+            print(indexOfLastPersonClicked);
+            AccuseButton.SetActive(true);
+
+            DialougeScript.lines.Add("Miss Scarlett, full name Vivienne Scarlet. A young blonde woman.");
+            DialougeScript.StartDialouge(); //Starts the dialogue
+        }
+    }
+
+    public void ColonelMustard()
+    {
+        if (!DialougeBox.activeSelf)
+        {
+            AccsesDialogueBox();
+            indexOfLastPersonClicked = 1;
+            print(indexOfLastPersonClicked);
+            AccuseButton.SetActive(true);
+
+            DialougeScript.lines.Add("Colonel Mustard, full name Algernon Mustard. An older man and a stock military officer.");
+            DialougeScript.StartDialouge(); //Starts the dialogue
+        }
+    }
+
+    public void MrGreen()
+    {
+        if (!DialougeBox.activeSelf)
+        {
+            AccsesDialogueBox();
+            indexOfLastPersonClicked = 2;
+            print(indexOfLastPersonClicked);
+            AccuseButton.SetActive(true);
+
+            DialougeScript.lines.Add("Mr. Green, full name Jonathan Green.");
+            DialougeScript.StartDialouge(); //Starts the dialogue
+        }
+    }
+
+    public void MrsPeackock()
+    {
+        if (!DialougeBox.activeSelf)
+        {
+            AccsesDialogueBox();
+            indexOfLastPersonClicked = 3;
+            print(indexOfLastPersonClicked);
+            AccuseButton.SetActive(true);
+
+            DialougeScript.lines.Add("Mrs.Peacock, full name Patricia Peacock.");
+            DialougeScript.StartDialouge(); //Starts the dialogue
+        }
+    }
+
+    public void ProfessorPlum()
+    {
+        if (!DialougeBox.activeSelf)
+        {
+            AccsesDialogueBox();
+            indexOfLastPersonClicked = 4;
+            print(indexOfLastPersonClicked);
+            AccuseButton.SetActive(true);
+
+            DialougeScript.lines.Add("Professor Plum, full name Edgar Plum.");
+            DialougeScript.StartDialouge(); //Starts the dialogue
+        }
+    }
+
+    public void DoctorOrchid()
+    {
+        if (!DialougeBox.activeSelf)
+        {
+            AccsesDialogueBox();
+            indexOfLastPersonClicked = 5;
+            print(indexOfLastPersonClicked);
+            AccuseButton.SetActive(true);
+
+            DialougeScript.lines.Add("Doctor Orchid, full name Diana Orchid. A young woman of East Asian descent, wearing a black blouse with a pink skirt.");
+            DialougeScript.lines.Add("Dr. Orchid is the adopted daughter of Mr. Boddy, whom he took in when she was a teenager.");
+            DialougeScript.StartDialouge(); //Starts the dialogue
+        }
+    }
+
+    public void Start()
+    {
+        DialougeScript = DialougeBox.GetComponent<DialougeScript>(); //Finds the DialgoueScript
+
+        suspects.Add("Miss Scarlett");//index: 0
+        suspects.Add("Colonel Mustard");//index: 1
+        suspects.Add("Mr. Green");//index: 2
+        suspects.Add("Mrs. Peacock");//index: 3
+        suspects.Add("Professor Plum");//index: 4
+        suspects.Add("Doctor Orchid");//index: 5
+
+        murderersIndex = 4;
     }
 }
 

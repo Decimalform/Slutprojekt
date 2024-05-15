@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEditor; //Unnessesary
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DialougeScript : MonoBehaviour
@@ -39,6 +40,14 @@ public class DialougeScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (SceneManager.GetActiveScene().buildIndex == 6)//Changes the initial dialouge depending on which scene is active, not relevant for the tutorial
+        {
+            //Suspects
+            lines.Clear();
+
+            lines.Add("These six are our suspects.");
+        }
+
         textSpeed = 0.1f; //Sets the intial waiting time between the typing of each character to 0.1 seconds
         textComponent.text = string.Empty; //Makes sure that the dialogueBox starts empty
         StartDialouge(); //Plays the StartDialogue method, starting the dialouge when the game starts
@@ -104,7 +113,13 @@ public class DialougeScript : MonoBehaviour
         else
         {
             gameObject.SetActive(false); //Inactivates the dialogueBox 
-            lines.Clear();
+            lines.Clear(); //Removes all lines from the lines list
+            
+            //Inactivates accuse button, not relevant for tutorial
+            foreach(GameObject Button in GameObject.FindGameObjectsWithTag("AccuseButton"))
+            {
+                Button.SetActive(false);
+            }
         }
     }
 
