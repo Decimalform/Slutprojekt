@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/Intro.unity
+    path: Assets/Scenes/Unused/Intro.unity
     guid: 242d6d589eafca8418c07785f797f9a4
   - enabled: 1
     path: Assets/Scenes/Unused/Investigation1.unity
