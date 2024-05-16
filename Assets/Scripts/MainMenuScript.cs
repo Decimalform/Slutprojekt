@@ -86,7 +86,7 @@ public class MainMenuScript : MonoBehaviour
             print(indexOfLastPersonClicked);
             AccuseButton.SetActive(true);
 
-            DialougeScript.lines.Add("Miss Scarlett, full name Vivienne Scarlet. A young blonde woman.");
+            DialougeScript.lines.Add("Miss Scarlett, full name Vivienne Scarlet. A young blonde woman, she used to work as a lounge singer in Las Vegas.");
             DialougeScript.lines.Add("She큦 29 years, 165 cm tall and has the European shoe size: 38.");
             DialougeScript.StartDialouge(); //Starts the dialogue
         }
@@ -116,7 +116,7 @@ public class MainMenuScript : MonoBehaviour
             print(indexOfLastPersonClicked);
             AccuseButton.SetActive(true);
 
-            DialougeScript.lines.Add("Mr. Green, full name Jonathan Green.");
+            DialougeScript.lines.Add("Mr. Green, full name Jonathan Green. He sports a green business suit and is described by the other suspects as friendly and talketive.");
             DialougeScript.lines.Add("He큦 38 years old, 178 cm and has the European shoe size: 41.");
             DialougeScript.StartDialouge(); //Starts the dialogue
         }
@@ -131,7 +131,7 @@ public class MainMenuScript : MonoBehaviour
             print(indexOfLastPersonClicked);
             AccuseButton.SetActive(true);
 
-            DialougeScript.lines.Add("Mrs.Peacock, full name Patricia Peacock.");
+            DialougeScript.lines.Add("Mrs.Peacock, full name Patricia Peacock. A dignified middle-aged woman");
             DialougeScript.lines.Add("She큦 55 years old, 168 cm tall and has the European shoe size: 39.");
             DialougeScript.StartDialouge(); //Starts the dialogue
         }
@@ -146,7 +146,7 @@ public class MainMenuScript : MonoBehaviour
             print(indexOfLastPersonClicked);
             AccuseButton.SetActive(true);
 
-            DialougeScript.lines.Add("Professor Plum, full name Edgar Plum.");
+            DialougeScript.lines.Add("Professor Plum, full name Edgar Plum. An absent-minded professor.");
             DialougeScript.lines.Add("He큦 43 years old, 173 cm tall and has the European shoe size: 40.");
             DialougeScript.StartDialouge(); //Starts the dialogue
         }
@@ -161,9 +161,8 @@ public class MainMenuScript : MonoBehaviour
             print(indexOfLastPersonClicked);
             AccuseButton.SetActive(true);
 
-            DialougeScript.lines.Add("Doctor Orchid, full name Diana Orchid. A young woman of East Asian descent, wearing a black blouse with a pink skirt.");
+            DialougeScript.lines.Add("Doctor Orchid, full name Diana Orchid. A young woman of East Asian descent and the adopted daughter of Mr. Boddy, whom he took in when she was a teenager.");
             DialougeScript.lines.Add("She큦 30 years old, 162 cm tall and has the European shoe size: 37.");
-            DialougeScript.lines.Add("Dr. Orchid is the adopted daughter of Mr. Boddy, whom he took in when she was a teenager.");
             DialougeScript.StartDialouge(); //Starts the dialogue
         }
     }

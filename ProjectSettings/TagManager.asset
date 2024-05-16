@@ -9,6 +9,7 @@ TagManager:
   - Sofa
   - CupboardDoor
   - AccuseButton
+  - CrimeSceneTag
   layers:
   - Default
   - TransparentFX

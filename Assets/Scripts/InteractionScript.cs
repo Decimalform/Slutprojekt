@@ -119,6 +119,12 @@ public class InteractionScript : MonoBehaviour
                 DialougeScript.lines.Add("A coffe stain in the shape of a footprint. It seems to be somewhere between a european size 40 and 43.");
             }
 
+            if (gameObject.tag == "CrimeSceneTag")
+            {
+                print(gameObject.name);
+                DialougeScript.lines.Add("A tag placed by other police to indicate a potentialy important piece of evidence.");
+            }
+
             //corpse
             if (gameObject.name == "CorpseCover")
             {
