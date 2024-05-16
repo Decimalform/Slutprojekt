@@ -69,10 +69,24 @@ public class MainMenuScript : MonoBehaviour
         if(indexOfLastPersonClicked == murderersIndex)
         {
             print("You winn!");
+            AccsesDialogueBox();
+            indexOfLastPersonClicked = 0;
+            print(indexOfLastPersonClicked);
+            
+            DialougeScript.lines.Add("You accused the right suspect! The killer was convicted and the case was closed.");
+            DialougeScript.StartDialouge(); //Starts the dialogue
+            StartCoroutine(BackToMainMenu());
         }
         else
         {
             print("You lose!");
+            AccsesDialogueBox();
+            indexOfLastPersonClicked = 0;
+            print(indexOfLastPersonClicked);
+
+            DialougeScript.lines.Add("You accused the wrong suspect! The killer got away...");
+            DialougeScript.StartDialouge(); //Starts the dialogue
+            StartCoroutine(BackToMainMenu());
         }
     }
 
@@ -165,6 +179,15 @@ public class MainMenuScript : MonoBehaviour
             DialougeScript.lines.Add("She´s 30 years old, 162 cm tall and has the European shoe size: 37.");
             DialougeScript.StartDialouge(); //Starts the dialogue
         }
+    }
+
+
+    public IEnumerator BackToMainMenu()
+    {
+        print("found timer");
+        yield return new WaitForSeconds(8);
+        print("timerDone");
+        SceneManager.LoadScene(0);
     }
 
     public void Start()

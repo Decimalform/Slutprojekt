@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class InteractionScript : MonoBehaviour
@@ -158,6 +159,12 @@ public class InteractionScript : MonoBehaviour
             switchToNonSelf = false;
         }
         
+    }
+
+    IEnumerator BackToMainMenu()
+    {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene(0);
     }
 
     // Update is called once per frame
