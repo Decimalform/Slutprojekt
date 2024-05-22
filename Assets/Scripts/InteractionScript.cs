@@ -161,12 +161,6 @@ public class InteractionScript : MonoBehaviour
         
     }
 
-    IEnumerator BackToMainMenu()
-    {
-        yield return new WaitForSeconds(3);
-        SceneManager.LoadScene(0);
-    }
-
     // Update is called once per frame
     void Update()
     {
